@@ -27,14 +27,17 @@ Smart Kids is a parent-controlled web platform for discovering age-verified anim
 - `GET /api/children`, `POST /api/children`, `PUT /api/children/:id`, `DELETE /api/children/:id` — Child profile CRUD
 - `GET /api/children/:id/preferences`, `PUT /api/children/:id/preferences` — Child preferences CRUD
 - `GET /api/genres`, `GET /api/languages` — Catalog metadata
-- `GET /api/cartoons`, `GET /api/cartoons/:id`, `POST /api/cartoons/sync` — Catalog browse and TMDB sync
+- `GET /api/cartoons`, `GET /api/cartoons/:id`, `GET /api/cartoons/:id/trailer`, `POST /api/cartoons/sync` — Catalog browse, official YouTube trailer lookup, and TMDB sync
 - `GET /api/recommendations/:childId`, `POST /api/recommendations/:childId/refresh` — Recommendations & recalculation
 - `GET /api/favorites/:childId`, `POST /api/favorites`, `DELETE /api/favorites/:id` — Favorites management
 - `GET /api/ratings/:childId`, `POST /api/ratings` — Parent ratings & feedback notes
 
-## Environment Secrets
+## Environment & Firebase Setup
 
-- `TMDB_API_KEY` (optional, server-side secret): Enables live synchronization of animated movies, TV series, and regional certifications from The Movie Database (TMDB v3).
+1. Copy `.env.example` to `.env` and configure your PostgreSQL (`SQL_HOST`, `SQL_USER`, `SQL_PASSWORD`, `SQL_DB_NAME`, `SQL_ADMIN_USER`, `SQL_ADMIN_PASSWORD`) and optional API secrets:
+   - `TMDB_API_KEY` (optional, server-side): Live synchronization of animated movies, TV series, and regional certifications from The Movie Database (TMDB v3).
+   - `YOUTUBE_API_KEY` (optional, server-side): Official trailer search via YouTube Data API v3.
+2. Copy `firebase-applet-config.example.json` to `firebase-applet-config.json` and fill in your Firebase web app configuration. Both `.env*` and `firebase-applet-config.json` are excluded from Git via `.gitignore`.
 
 ## Running Unit Tests
 
