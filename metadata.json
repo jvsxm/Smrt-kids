@@ -1,0 +1,6 @@
+{
+  "name": "Smart Kids",
+  "description": "Intelligent cartoon recommendation platform helping parents discover age-verified animated movies and TV series tailored to each child's interests and language preferences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
